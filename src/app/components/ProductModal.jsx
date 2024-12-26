@@ -48,8 +48,7 @@ const ProductModal = ({ product, onClose }) => {
           </button>
           <img
             src={productImages[currentImageIndex]}
-            alt={product.alt || `${product.title} - View ${currentImageIndex + 1} - Natural Stone Collection`}
-            loading="lazy"
+            alt={`${product.title} view ${currentImageIndex + 1}`}
           />
           <button className="slider-button next" onClick={nextImage}>
             <ChevronRight size={24} />
