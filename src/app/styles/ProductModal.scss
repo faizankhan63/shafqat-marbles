@@ -1,0 +1,176 @@
+@import './_variables.scss';
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.modal-content {
+  background-color: $darker-bg;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  padding: 5px;
+  
+  &:hover {
+    color: $accent;
+  }
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: 500px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    &.prev {
+      left: 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    &.next {
+      right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+}
+
+.modal-info {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  
+  h2 {
+    color: $accent;
+    margin-bottom: 10px;
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    color: rgba($text, 0.9);
+    margin-bottom: 20px;
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 15px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-top: auto;
+    position: sticky;
+    bottom: 0;
+    margin: 15px 0 0 0;
+    
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      padding: 12px 20px;
+    }
+
+    &:hover {
+      background-color: #128C7E;
+    }
+  }
+}
+
+.image-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+
+    &.active {
+      background: $accent;
+    }
+  }
+}
+
+.modal-info {
+  scrollbar-width: thin;
+  scrollbar-color: $accent rgba($text, 0.1);
+  
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba($text, 0.1);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $accent;
+    border-radius: 4px;
+  }
+} 
