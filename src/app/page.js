@@ -26,36 +26,42 @@ const marbleProducts = [
     description:
       "Badal Grey Marble is a striking natural stone that is quarried in Pakistan. It is highly regarded for its distinctive grey color and elegant appearance. Here is a description of Badal Grey Marble",
     image: badal.src,
+    alt: "Badal Grey Marble - Premium Pakistani Natural Stone with Distinctive Grey Color",
   },
   {
     title: "Black Gold Marble",
     description:
       "Black Gold Marble is a highly sought-after natural stone that is quarried in Pakistan. It is known for its exquisite beauty, elegance, and unique characteristics. This marble variety is widely used in the construction and interior design industries for various applications, including flooring, countertops, wall claddings, and decorative accents.",
     image: blackGold.src,
+    alt: "Black Gold Marble - Luxurious Pakistani Stone with Gold Accents",
   },
   {
     title: "Botticino Fancy Marble",
     description:
       "Botticino Fancy Marble is a luxurious and captivating natural stone quarried in Pakistan. It is celebrated for its warm beige color, which exudes a sense of elegance and timelessness, making it a favored choice in the world of interior design.",
     image: bootisina.src,
+    alt: "Botticino Fancy Marble - Elegant Beige Pakistani Marble",
   },
   {
     title: "Black Granite",
     description:
       "Jet black granite is one of the most well-liked granites in Pakistan . Marble Pk is  regarded as Pakistan’s leading distributor of Pakistani Jet black granite.  We provide Premium quality of Jet black granite for stairs, slabs, washroom vanities.",
     image: graniteBlack.src,
+    alt: "Premium Jet Black Granite - High-Quality Pakistani Stone",
   },
   {
     title: "Sunny Grey Marble",
     description:
       "Sunny Grey Marble is a product of Pakistan, and it is a perfect representation of the regions exceptional workmanship and stunning natural beauty. Additionally it is often referred to as “ Balochistan Grey Marble”. This unique grey marble is readily accessible for builders, homeowners and designer to get going, making it a high quality material that can make the projects stand out.",
     image: sunnyGrey.src,
+    alt: "Sunny Grey Marble - Balochistan Grey Premium Natural Stone",
   },
   {
     title: "Travera Marble",
     description:
       "Travera Marble, also known as Travera Beige Marble, is a unique and distinctive natural stone quarried in Pakistan. It is highly regarded for its fossilized appearance and beautiful beige coloration, making it a popular choice for various interior and exterior design applications.",
     image: travera.src,
+    alt: "Travera Beige Marble - Distinctive Pakistani Natural Stone with Fossilized Patterns",
   },
 ];
 
@@ -122,7 +128,11 @@ export default function Home() {
                 className="product-card"
                 onClick={() => setSelectedProduct(product)}
               >
-                <img src={product.image} alt={product.title} />
+                <img 
+                  src={product.image} 
+                  alt={product.alt || `${product.title} - Premium Pakistani Marble`} 
+                  loading="lazy"
+                />
                 <div className="card-content">
                   <h3>{product.title}</h3>
                   <p>{product.description}</p>
