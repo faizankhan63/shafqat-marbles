@@ -30,6 +30,11 @@ body {
     font-size: 4rem;
     margin-bottom: 1rem;
     color: $text;
+    
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      padding: 0 1rem;
+    }
   }
 
   p {
@@ -41,6 +46,12 @@ body {
     font-size: 1.5rem;
     color: rgba($text, 0.9);
     margin-bottom: 2rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   .hero-content {
@@ -53,6 +64,12 @@ body {
       color: rgba($text, 0.8);
       margin-bottom: 2.5rem;
       padding: 0 1rem;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+      }
     }
 
     .features {
@@ -61,6 +78,11 @@ body {
       gap: 2rem;
       margin: 2rem 0;
       padding: 0 1rem;
+
+      @media (max-width: 768px) {
+        gap: 1rem;
+        padding: 0 0.5rem;
+      }
 
       .feature {
         display: flex;
@@ -74,6 +96,10 @@ body {
 
         span {
           font-size: 1.1rem;
+          
+          @media (max-width: 768px) {
+            font-size: 0.9rem;
+          }
         }
       }
     }
@@ -95,6 +121,11 @@ body {
         background-color: darken($accent, 10%);
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      
+      @media (max-width: 768px) {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
       }
     }
   }
